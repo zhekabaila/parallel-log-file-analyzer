@@ -1,0 +1,20 @@
+# Virtual environment & artefak build
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# File log hasil generate bisa sangat besar
+data/*.log
+data/*.log.gz
+
+# Hasil sementara
+.pytest_cache/
+.coverage
+htmlcov/
+*.tmp
+
+# results/ (CSV, JSON, PNG) sengaja TIDAK diabaikan karena dibutuhkan laporan

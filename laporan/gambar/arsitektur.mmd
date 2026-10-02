@@ -1,0 +1,28 @@
+%% Diagram arsitektur Parallel Log File Analyzer
+%% Render: tempel ke https://mermaid.live atau `mmdc arsitektur.mmd -o arsitektur.png`
+flowchart LR
+    A[Generator log dummy<br/>generator.py] --> B[File log besar<br/>data/server_1m.log]
+    B --> C{Pemilihan mode<br/>cli.py}
+    C -->|sequential| D[analyze_sequential<br/>satu loop streaming]
+    C -->|threads| E[ThreadPoolExecutor]
+    C -->|processes| F[ProcessPoolExecutor]
+
+    B --> G[Chunking byte-range<br/>compute_chunks + iter_lines_in_range]
+    G --> H1[Worker 1<br/>parse_line -> LogStats lokal]
+    G --> H2[Worker 2<br/>parse_line -> LogStats lokal]
+    G --> H3[Worker N<br/>parse_line -> LogStats lokal]
+
+    E --> H1
+    E --> H2
+    F --> H1
+    F --> H2
+    F --> H3
+
+    H1 --> M[Merge asosiatif & komutatif<br/>merge_all]
+    H2 --> M
+    H3 --> M
+    D --> M
+
+    M --> V{Validasi ekuivalensi<br/>LogStats.__eq__}
+    V --> R[Reporter konsol<br/>waktu, throughput, speedup, efisiensi,<br/>top-N IP/user/path, response time]
+    R --> K[results/*.csv, *.json,<br/>charts/*.png, laporan]

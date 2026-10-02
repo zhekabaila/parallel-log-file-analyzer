@@ -1,0 +1,26 @@
+======================================================
+PARALLEL LOG FILE ANALYZER
+By ZHEKA BAILA ARKAN (247006111152)
+======================================================
+BUG DEMO 2 : Synchronization overhead, satu lock global per baris
+------------------------------------------------------
+  prepare data uji: 100000 baris -> /Users/zhekabaila/parallel-log-file-analyzer/data/bug_sync.log
+  progress generate: 25% (25000/100000 baris)
+  progress generate: 50% (50000/100000 baris)
+  progress generate: 75% (75000/100000 baris)
+  progress generate: 100% (100000/100000 baris)
+Selesai generate 100000 baris -> /Users/zhekabaila/parallel-log-file-analyzer/data/bug_sync.log dalam 0.64 detik
+
+Tiga kali ulang (detik):
+  sequential tanpa lock : ['0.259', '0.265', '0.258']
+  threads + lock/baris  : ['0.399', '0.421', '0.393']
+
+Ringkasan:
+  jumlah thread                 : 4
+  median sequential             : 0.259 s
+  median lock per baris         : 0.399 s
+  rasio waktu                   : 1.54x sequential
+  hasil benar?                  : YA
+  Kesimpulan: benar, tetapi biaya akuisisi lock per baris membuat
+  paralelisasi tidak memberi kecepatan apa pun (semua thread antre).
+======================================================

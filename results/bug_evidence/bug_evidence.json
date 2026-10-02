@@ -1,0 +1,55 @@
+{
+  "sumber": "eksekusi nyata bug_demo/ pada mesin ini (lihat file .txt di folder yang sama)",
+  "mesin": "Apple M1, 8 core fisik/logis, macOS 26.6, Python 3.14.4",
+  "bug_1_race_condition": {
+    "skrip": "buggy_race_condition.py",
+    "data_baris": 50000,
+    "threads": 4,
+    "runs": 10,
+    "baseline_total_lines": 50000,
+    "baseline_error_lines": 4011,
+    "runs_yang_salah": 10,
+    "selisih_terbesar_total_lines": 2537,
+    "selisih_terbesar_error_lines": 216,
+    "lost_update_persen_total": 5.07
+  },
+  "bug_2_sync_overhead": {
+    "skrip": "buggy_sync_overhead.py",
+    "data_baris": 100000,
+    "threads": 4,
+    "runs": 3,
+    "median_sequential_tanpa_lock_detik": 0.259,
+    "median_lock_per_baris_detik": 0.399,
+    "rasio_terhadap_sequential": 1.54,
+    "hasil_benar": true
+  },
+  "bug_3_comm_overhead": {
+    "skrip": "buggy_comm_overhead.py",
+    "data_baris": 100000,
+    "processes": 4,
+    "runs": 3,
+    "median_naive_queue_per_baris_detik": 1.301,
+    "median_final_byte_range_detik": 0.197,
+    "rasio_naive_terhadap_final": 6.6,
+    "payload_naive_MB": 10.3,
+    "payload_final_KB": 0.3,
+    "hasil_identik": true
+  },
+  "timings": [
+    {
+      "label": "bug 2: 4 thread + lock per baris",
+      "seconds": 0.399,
+      "context": "100.000 baris, benar tetapi 1,54x lebih lambat dari sequential"
+    },
+    {
+      "label": "bug 3: 4 proses + Queue per baris",
+      "seconds": 1.301,
+      "context": "100.000 baris, payload 10,3 MB antar proses"
+    },
+    {
+      "label": "final: 4 proses byte-range (map-reduce lokal)",
+      "seconds": 0.197,
+      "context": "100.000 baris, payload hanya 0,3 KB"
+    }
+  ]
+}

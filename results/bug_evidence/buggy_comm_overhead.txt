@@ -1,0 +1,21 @@
+======================================================
+PARALLEL LOG FILE ANALYZER
+By ZHEKA BAILA ARKAN (247006111152)
+======================================================
+BUG DEMO 3 : Communication overhead, worker menerima baris mentah
+------------------------------------------------------
+  run 1: naive=1.485s  final=0.192s
+  run 2: naive=1.301s  final=0.197s
+  run 3: naive=1.221s  final=0.197s
+
+Ringkasan:
+  proses                          : 4 (pid utama 7136)
+  median waktu naive (kirim baris): 1.301 s
+  median waktu final (byte-range) : 0.197 s
+  perbandingan                    : naive 6.60x lebih lambat
+  payload terkirim naive          : 10.3 MB
+  payload terkirim final          : 0.3 KB
+  hasil keduanya identik          : YA
+  Kesimpulan: serialisasi/deserialisasi string jutaan baris mendominasi
+  waktu kerja; kirim hanya (path, start, end) dan kembalikan agregat kecil.
+======================================================

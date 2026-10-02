@@ -1,0 +1,442 @@
+{
+  "machine": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "system": "Darwin",
+    "machine": "arm64",
+    "processor": "arm",
+    "python_version": "3.14.4",
+    "python_implementation": "CPython",
+    "logical_cores": 8,
+    "gil_enabled": true,
+    "cpu_brand": "Apple M1",
+    "physical_cores": "8",
+    "logical_cores_sysctl": "8",
+    "ram_gb": 8.0,
+    "measured_at": "2026-10-02 14:16:04"
+  },
+  "config": {
+    "sizes": [
+      100000,
+      500000,
+      1000000
+    ],
+    "workers": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "repeats": 3,
+    "warmup_runs": 1,
+    "seed": 42,
+    "timer": "time.perf_counter",
+    "aggregation": "median"
+  },
+  "results": [
+    {
+      "num_lines": 100000,
+      "mode": "sequential",
+      "workers": 1,
+      "median_seconds": 0.315869,
+      "speedup": 1.0,
+      "efficiency": 100.0,
+      "throughput_rows_per_s": 316587,
+      "runs_seconds": [
+        0.304682,
+        0.327838,
+        0.315869
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "threads",
+      "workers": 1,
+      "median_seconds": 0.362642,
+      "speedup": 0.871,
+      "efficiency": 87.1,
+      "throughput_rows_per_s": 275754,
+      "runs_seconds": [
+        0.362642,
+        0.379946,
+        0.357694
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "threads",
+      "workers": 2,
+      "median_seconds": 0.416179,
+      "speedup": 0.759,
+      "efficiency": 37.95,
+      "throughput_rows_per_s": 240281,
+      "runs_seconds": [
+        0.416179,
+        0.399413,
+        0.601858
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "threads",
+      "workers": 4,
+      "median_seconds": 0.477985,
+      "speedup": 0.6608,
+      "efficiency": 16.52,
+      "throughput_rows_per_s": 209212,
+      "runs_seconds": [
+        0.475877,
+        0.487598,
+        0.477985
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "threads",
+      "workers": 8,
+      "median_seconds": 0.813804,
+      "speedup": 0.3881,
+      "efficiency": 4.85,
+      "throughput_rows_per_s": 122880,
+      "runs_seconds": [
+        1.267654,
+        0.756282,
+        0.813804
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "processes",
+      "workers": 1,
+      "median_seconds": 0.500975,
+      "speedup": 0.6305,
+      "efficiency": 63.05,
+      "throughput_rows_per_s": 199611,
+      "runs_seconds": [
+        0.500975,
+        0.449193,
+        0.783292
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "processes",
+      "workers": 2,
+      "median_seconds": 0.368568,
+      "speedup": 0.857,
+      "efficiency": 42.85,
+      "throughput_rows_per_s": 271320,
+      "runs_seconds": [
+        0.398462,
+        0.316215,
+        0.368568
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "processes",
+      "workers": 4,
+      "median_seconds": 0.340641,
+      "speedup": 0.9273,
+      "efficiency": 23.18,
+      "throughput_rows_per_s": 293565,
+      "runs_seconds": [
+        0.339454,
+        0.340641,
+        0.346333
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 100000,
+      "mode": "processes",
+      "workers": 8,
+      "median_seconds": 0.288609,
+      "speedup": 1.0945,
+      "efficiency": 13.68,
+      "throughput_rows_per_s": 346489,
+      "runs_seconds": [
+        0.349466,
+        0.269357,
+        0.288609
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "sequential",
+      "workers": 1,
+      "median_seconds": 1.601451,
+      "speedup": 1.0,
+      "efficiency": 100.0,
+      "throughput_rows_per_s": 312217,
+      "runs_seconds": [
+        1.595651,
+        1.610164,
+        1.601451
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "threads",
+      "workers": 1,
+      "median_seconds": 1.8695,
+      "speedup": 0.8566,
+      "efficiency": 85.66,
+      "throughput_rows_per_s": 267451,
+      "runs_seconds": [
+        1.912635,
+        1.8695,
+        1.866864
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "threads",
+      "workers": 2,
+      "median_seconds": 2.072233,
+      "speedup": 0.7728,
+      "efficiency": 38.64,
+      "throughput_rows_per_s": 241286,
+      "runs_seconds": [
+        2.411445,
+        2.072233,
+        2.065385
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "threads",
+      "workers": 4,
+      "median_seconds": 2.513957,
+      "speedup": 0.637,
+      "efficiency": 15.93,
+      "throughput_rows_per_s": 198890,
+      "runs_seconds": [
+        2.513957,
+        2.487321,
+        2.598629
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "threads",
+      "workers": 8,
+      "median_seconds": 3.506568,
+      "speedup": 0.4567,
+      "efficiency": 5.71,
+      "throughput_rows_per_s": 142590,
+      "runs_seconds": [
+        3.506568,
+        3.543304,
+        3.418824
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "processes",
+      "workers": 1,
+      "median_seconds": 1.946512,
+      "speedup": 0.8227,
+      "efficiency": 82.27,
+      "throughput_rows_per_s": 256870,
+      "runs_seconds": [
+        1.946512,
+        1.906323,
+        1.974421
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "processes",
+      "workers": 2,
+      "median_seconds": 1.120852,
+      "speedup": 1.4288,
+      "efficiency": 71.44,
+      "throughput_rows_per_s": 446089,
+      "runs_seconds": [
+        1.127273,
+        1.120852,
+        1.108326
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "processes",
+      "workers": 4,
+      "median_seconds": 0.75312,
+      "speedup": 2.1264,
+      "efficiency": 53.16,
+      "throughput_rows_per_s": 663904,
+      "runs_seconds": [
+        0.772139,
+        0.75312,
+        0.74688
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 500000,
+      "mode": "processes",
+      "workers": 8,
+      "median_seconds": 0.743798,
+      "speedup": 2.1531,
+      "efficiency": 26.91,
+      "throughput_rows_per_s": 672225,
+      "runs_seconds": [
+        0.743798,
+        0.805327,
+        0.693102
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "sequential",
+      "workers": 1,
+      "median_seconds": 3.183138,
+      "speedup": 1.0,
+      "efficiency": 100.0,
+      "throughput_rows_per_s": 314155,
+      "runs_seconds": [
+        3.163758,
+        3.293127,
+        3.183138
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "threads",
+      "workers": 1,
+      "median_seconds": 3.724503,
+      "speedup": 0.8546,
+      "efficiency": 85.46,
+      "throughput_rows_per_s": 268492,
+      "runs_seconds": [
+        3.753132,
+        3.724503,
+        3.712024
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "threads",
+      "workers": 2,
+      "median_seconds": 4.109013,
+      "speedup": 0.7747,
+      "efficiency": 38.73,
+      "throughput_rows_per_s": 243367,
+      "runs_seconds": [
+        4.004587,
+        4.109013,
+        4.442378
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "threads",
+      "workers": 4,
+      "median_seconds": 6.973941,
+      "speedup": 0.4564,
+      "efficiency": 11.41,
+      "throughput_rows_per_s": 143391,
+      "runs_seconds": [
+        10.635157,
+        5.532263,
+        6.973941
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "threads",
+      "workers": 8,
+      "median_seconds": 5.939375,
+      "speedup": 0.5359,
+      "efficiency": 6.7,
+      "throughput_rows_per_s": 168368,
+      "runs_seconds": [
+        6.372593,
+        5.939375,
+        5.769323
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "processes",
+      "workers": 1,
+      "median_seconds": 3.82146,
+      "speedup": 0.833,
+      "efficiency": 83.3,
+      "throughput_rows_per_s": 261680,
+      "runs_seconds": [
+        3.82146,
+        3.85129,
+        3.780223
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "processes",
+      "workers": 2,
+      "median_seconds": 2.255641,
+      "speedup": 1.4112,
+      "efficiency": 70.56,
+      "throughput_rows_per_s": 443333,
+      "runs_seconds": [
+        2.301049,
+        2.228927,
+        2.255641
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "processes",
+      "workers": 4,
+      "median_seconds": 1.498346,
+      "speedup": 2.1244,
+      "efficiency": 53.11,
+      "throughput_rows_per_s": 667403,
+      "runs_seconds": [
+        1.498346,
+        1.418149,
+        1.608335
+      ],
+      "equivalent_to_sequential": true
+    },
+    {
+      "num_lines": 1000000,
+      "mode": "processes",
+      "workers": 8,
+      "median_seconds": 1.491879,
+      "speedup": 2.1336,
+      "efficiency": 26.67,
+      "throughput_rows_per_s": 670296,
+      "runs_seconds": [
+        2.128706,
+        1.491879,
+        1.376138
+      ],
+      "equivalent_to_sequential": true
+    }
+  ]
+}

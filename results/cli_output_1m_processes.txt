@@ -1,0 +1,82 @@
+======================================================
+PARALLEL LOG FILE ANALYZER
+By ZHEKA BAILA ARKAN (247006111152)
+======================================================
+[MULAI] membagi file menjadi 4 chunk
+[SELESAI] worker-1 worker-2 worker-3 worker-4
+======================================================
+PARALLEL LOG FILE ANALYZER
+By ZHEKA BAILA ARKAN (247006111152)
+======================================================
+Mode             : multiprocessing
+Jumlah proses  : 4
+File             : data/server_1m.log (1.000.000 baris, 89.472.259 byte)
+------------------------------------------------------
+Waktu total      : 2.897 detik
+Throughput       : 345.200 baris/detik
+Speedup          : 1.62x   Efisiensi: 40.5%
+======================================================
+Ringkasan Statistik
+------------------------------------------------------
+Total baris      : 1.000.000
+Baris malformed  : 4.475
+Baris valid      : 995.525
+
+Per level:
+  DEBUG   :       99.525
+  ERROR   :       79.614
+  INFO    :      696.958
+  WARNING :      119.428
+
+Top-5 status code:
+  200     :      522.098
+  201     :       83.261
+  204     :       75.926
+  304     :       58.983
+  301     :       56.215
+
+Distribusi HTTP method:
+  GET     :      596.864
+  POST    :      249.051
+  PUT     :       80.044
+  DELETE  :       49.650
+  PATCH   :       19.916
+
+Top-5 IP address:
+  41.213.115.199  :        7.125
+  47.149.219.1    :        7.076
+  66.119.13.144   :        7.055
+  217.100.186.111 :        7.043
+  107.168.65.172  :        7.013
+
+Top-5 user:
+  user_113    :       15.807
+  user_067    :       15.442
+  user_126    :       15.193
+  user_125    :       15.087
+  user_166    :       14.800
+
+Top-5 path/endpoint:
+  /api/search             :       64.712
+  /login                  :       64.035
+  /search                 :       56.865
+  /api/orders             :       56.829
+  /api/users              :       50.199
+
+Aktivitas per jam:
+  00:00       140.425
+  01:00       140.356
+  02:00       140.533
+  03:00       140.337
+  04:00       140.940
+  05:00       140.560
+  06:00       140.202
+  07:00        11.610
+  08:00           562
+
+Response time & traffic:
+  Rata-rata : 248.04 ms
+  Maksimum  : 2.000 ms
+  p95       : 1252.11 ms
+  Total bytes : 24.926.508.226
+======================================================

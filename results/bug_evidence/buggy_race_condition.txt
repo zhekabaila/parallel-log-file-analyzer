@@ -1,0 +1,33 @@
+======================================================
+PARALLEL LOG FILE ANALYZER
+By ZHEKA BAILA ARKAN (247006111152)
+======================================================
+BUG DEMO 1 : Race condition, statistik global tanpa lock
+------------------------------------------------------
+prepare data uji: 50000 baris -> /Users/zhekabaila/parallel-log-file-analyzer/data/bug_race.log
+  progress generate: 25% (12500/50000 baris)
+  progress generate: 50% (25000/50000 baris)
+  progress generate: 75% (37500/50000 baris)
+  progress generate: 100% (50000/50000 baris)
+Selesai generate 50000 baris -> /Users/zhekabaila/parallel-log-file-analyzer/data/bug_race.log dalam 0.32 detik
+Baseline sequential : total=50000 errors=4011 (0.163 s)
+
+Hasil per percobaan:
+  run  1: total=  47606 (hilang  2394) errors=  3830 (hilang   181) BEDA
+  run  2: total=  47574 (hilang  2426) errors=  3795 (hilang   216) BEDA
+  run  3: total=  47723 (hilang  2277) errors=  3807 (hilang   204) BEDA
+  run  4: total=  47463 (hilang  2537) errors=  3824 (hilang   187) BEDA
+  run  5: total=  47620 (hilang  2380) errors=  3819 (hilang   192) BEDA
+  run  6: total=  47697 (hilang  2303) errors=  3836 (hilang   175) BEDA
+  run  7: total=  47680 (hilang  2320) errors=  3816 (hilang   195) BEDA
+  run  8: total=  47858 (hilang  2142) errors=  3828 (hilang   183) BEDA
+  run  9: total=  47713 (hilang  2287) errors=  3836 (hilang   175) BEDA
+  run 10: total=  47779 (hilang  2221) errors=  3818 (hilang   193) BEDA
+
+Ringkasan:
+  jumlah percobaan             : 10
+  percobaan dengan hasil salah : 10
+  selisih terbesar total baris : 2537
+  selisih terbesar jumlah ERROR: 216
+  Kesimpulan: update hilang (lost update) karena write tidak atomik.
+======================================================

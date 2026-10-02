@@ -1,0 +1,15 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "system": "Darwin",
+  "machine": "arm64",
+  "processor": "arm",
+  "python_version": "3.14.4",
+  "python_implementation": "CPython",
+  "logical_cores": 8,
+  "gil_enabled": true,
+  "cpu_brand": "Apple M1",
+  "physical_cores": "8",
+  "logical_cores_sysctl": "8",
+  "ram_gb": 8.0,
+  "measured_at": "2026-10-02 14:16:04"
+}
