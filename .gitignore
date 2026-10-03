@@ -8,8 +8,8 @@ build/
 dist/
 
 # File log hasil generate bisa sangat besar
-data/*.log
-data/*.log.gz
+# data/*.log
+# data/*.log.gz
 
 # Hasil sementara
 .pytest_cache/
@@ -18,3 +18,4 @@ htmlcov/
 *.tmp
 
 # results/ (CSV, JSON, PNG) sengaja TIDAK diabaikan karena dibutuhkan laporan
+.DS_Store
